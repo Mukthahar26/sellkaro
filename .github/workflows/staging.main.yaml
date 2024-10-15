@@ -1,0 +1,82 @@
+
+
+
+name: Build Android APK
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to build from'
+        required: true
+        default: 'main'
+      buildtype:
+        type: choice
+        description: 'Select the build type (iOS, Android, or Both)'
+        required: true
+        default: 'Both'
+        options:
+        - Both
+        - iOS
+        - Android
+      environment:
+        type: choice
+        description: 'Select the environment type (DEV, Staging, or Production)'
+        required: true
+        default: 'DEV'
+        options:
+        - DEV
+        - Staging
+        - Production
+      location:
+        type: choice
+        description: 'Select the build store location'
+        required: true
+        default: 'AWS S3'
+        options:
+        - Store
+        - AWS S3
+        
+jobs:
+  build:
+    name: Build Android APK
+    runs-on: ubuntu-latest
+
+    env:
+      CI: true
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4  # Updated to latest version
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4  # Updated to use Node.js 20
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Install JDK
+      uses: actions/setup-java@v3  # Compatible with Node.js 20
+      with:
+        distribution: 'zulu'
+        java-version: '17'
+
+    - name: Install Android SDK
+      uses: android-actions/setup-android@v3  # Updated to v3, compatible with Node.js 20
+
+    - name: Prepare Android environment
+      run: sdkmanager --install "build-tools;33.0.2" "platforms;android-33" "ndk;26.1.10909125"
+
+    - name: Build Android APK
+      run: |
+        cd android
+        ./gradlew clean assembleRelease
+
+    - name: Upload APK to GitHub Actions artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: app-release.apk
+        path: android/app/build/outputs/apk/release/app-release.apk
+        if-no-files-found: error
