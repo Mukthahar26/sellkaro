@@ -3,16 +3,17 @@ name: Build Android APK
 on:
   workflow_dispatch:
     inputs:
-     name:
-       type: choice
-       description: Who to greet
-       options: 
-       - monalisa
-       - cschleiden
       branch:
         description: 'Branch to build from'
         required: true
         default: 'main'
+      name:
+        type: choice
+        description: "Select build type"
+        options:
+        - DEV
+        - Staging
+        - Production
 
 jobs:
   build:
