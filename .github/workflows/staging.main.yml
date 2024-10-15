@@ -1,7 +1,4 @@
-
-
-
-name: Build Android APK
+name: Staging
 
 on:
   workflow_dispatch:
