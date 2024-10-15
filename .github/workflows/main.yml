@@ -25,7 +25,15 @@ on:
         - DEV
         - Staging
         - Production
-
+      location:
+        type: choice
+        description: 'Select the build store location'
+        required: true
+        default: 'AWS S3'
+        options:
+        - Store
+        - AWS S3
+        
 jobs:
   build:
     name: Build Android APK
