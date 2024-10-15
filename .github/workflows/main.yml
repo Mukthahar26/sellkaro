@@ -13,9 +13,9 @@ on:
         required: true
         default: 'Both'
         options:
+        - Both
         - iOS
         - Android
-        - Both
       environment:
         type: choice
         description: 'Select the environment type (DEV, Staging, or Production)'
