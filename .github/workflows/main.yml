@@ -7,6 +7,22 @@ on:
         description: 'Branch to build from'
         required: true
         default: 'main'
+      buildType:
+        description: 'Select the build type (iOS, Android, or Both)'
+        required: true
+        default: 'Android'
+        options:
+          - iOS
+          - Android
+          - Both
+      environmentType:
+        description: 'Select the environment type (DEV, Staging, or Production)'
+        required: true
+        default: 'DEV'
+        options:
+          - DEV
+          - Staging
+          - Production
 
 jobs:
   build:
@@ -48,5 +64,6 @@ jobs:
     - name: Upload APK to GitHub Actions artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: android-apk
+        name: app-release.apk
         path: android/app/build/outputs/apk/release/app-release.apk
+        if-no-files-found: error
