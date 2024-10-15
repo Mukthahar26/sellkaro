@@ -7,22 +7,14 @@ on:
         description: 'Branch to build from'
         required: true
         default: 'main'
-      buildType:
+    buildType:
+      choice:
+        type: choice
         description: 'Select the build type (iOS, Android, or Both)'
-        required: true
-        default: 'Android'
         options:
-          - iOS
-          - Android
-          - Both
-      environmentType:
-        description: 'Select the environment type (DEV, Staging, or Production)'
-        required: true
-        default: 'DEV'
-        options:
-          - DEV
-          - Staging
-          - Production
+        - iOS
+        - Android
+        - Both
 
 jobs:
   build:
