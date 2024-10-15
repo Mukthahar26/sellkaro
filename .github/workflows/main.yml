@@ -3,7 +3,6 @@ name: Build Android APK
 on:
   workflow_dispatch:
     inputs:
-      branch:
       buildtype:
         type: choice
         description: 'Select the build type (iOS, Android, or Both)'
