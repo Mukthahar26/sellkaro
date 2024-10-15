@@ -4,9 +4,6 @@ on:
   workflow_dispatch:
     inputs:
       branch:
-        description: 'Branch to build from'
-        required: true
-        default: 'main'
       buildtype:
         type: choice
         description: 'Select the build type (iOS, Android, or Both)'
