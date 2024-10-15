@@ -7905,7 +7905,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
+"prop-types@npm:^15.5.10, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -8012,6 +8012,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-device-info@npm:^13.1.0":
+  version: 13.1.0
+  resolution: "react-native-device-info@npm:13.1.0"
+  peerDependencies:
+    react-native: "*"
+  checksum: e05cd870981b8366bcb43f89d8565f123b1c3f727d399db03d7ac5e5cda6d06da3d326d06291e11d4920223dbd3db22631a50e2c3d58d8a8c62e196e59518e8e
+  languageName: node
+  linkType: hard
+
 "react-native-encrypted-storage@npm:^4.0.3":
   version: 4.0.3
   resolution: "react-native-encrypted-storage@npm:4.0.3"
@@ -8019,6 +8028,16 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 9d2999c58559f1e4f66d1baf2c3edeff96cf42027900850d94c6bbea24ac9715047ce69bf6e8a73b68aff4508cf35dd88ac494ad5905933286ef3b75cd123e30
+  languageName: node
+  linkType: hard
+
+"react-native-fast-image@npm:^8.6.3":
+  version: 8.6.3
+  resolution: "react-native-fast-image@npm:8.6.3"
+  peerDependencies:
+    react: ^17 || ^18
+    react-native: ">=0.60.0"
+  checksum: 29289cb6b2eae0983c8922b22e2d9de3be07322bb7991c5def19f95eadefaedb0e308ff0b38cc1d0444e8bd4fe94a7621a99a2d3d9298100bcb60b3144677234
   languageName: node
   linkType: hard
 
@@ -8060,12 +8079,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-share@npm:^11.0.3":
+  version: 11.0.3
+  resolution: "react-native-share@npm:11.0.3"
+  checksum: aeb3395fea125c279a933045122c6d0997125ad6c84705624c570fa1dda6ffb6197b554ef2eb2959831b394bc7501a9e0db899d75ad1663d3689a3e1d2b9c716
+  languageName: node
+  linkType: hard
+
 "react-native-size-matters@npm:^0.4.2":
   version: 0.4.2
   resolution: "react-native-size-matters@npm:0.4.2"
   peerDependencies:
     react-native: "*"
   checksum: 65dac50cad8d03bd046c62e327edf1c162c650fa3320613343bb978ca4b83c8e4e61b0f528502a154a1d4e4baa6dc296799a57737177e3d3c77b64750f5d8076
+  languageName: node
+  linkType: hard
+
+"react-native-swiper@npm:^1.6.0":
+  version: 1.6.0
+  resolution: "react-native-swiper@npm:1.6.0"
+  dependencies:
+    prop-types: ^15.5.10
+  checksum: 21e7a270dce6d249f718377a8aa2578c9a89b2b076710f6a60dc849ace5b47ade9e071345607947e738c0fdb06b17d9dad6ef99a8f76d7072b13bf3655026225
   languageName: node
   linkType: hard
 
@@ -8578,11 +8613,15 @@ __metadata:
     prettier: 2.8.8
     react: 18.3.1
     react-native: 0.75.4
+    react-native-device-info: ^13.1.0
     react-native-encrypted-storage: ^4.0.3
+    react-native-fast-image: ^8.6.3
     react-native-gesture-handler: ^2.20.0
     react-native-safe-area-context: ^4.11.0
     react-native-screens: ^3.34.0
+    react-native-share: ^11.0.3
     react-native-size-matters: ^0.4.2
+    react-native-swiper: ^1.6.0
     react-native-vector-icons: ^10.2.0
     react-test-renderer: 18.3.1
     typescript: 5.0.4
@@ -9812,11 +9851,11 @@ __metadata:
   linkType: hard
 
 "yaml@npm:^2.2.1":
-  version: 2.5.1
-  resolution: "yaml@npm:2.5.1"
+  version: 2.6.0
+  resolution: "yaml@npm:2.6.0"
   bin:
     yaml: bin.mjs
-  checksum: 31275223863fbd0b47ba9d2b248fbdf085db8d899e4ca43fff8a3a009497c5741084da6871d11f40e555d61360951c4c910b98216c1325d2c94753c0036d8172
+  checksum: e5e74fd75e01bde2c09333d529af9fbb5928c5f7f01bfdefdcb2bf753d4ef489a45cab4deac01c9448f55ca27e691612b81fe3c3a59bb8cb5b0069da0f92cf0b
   languageName: node
   linkType: hard
 

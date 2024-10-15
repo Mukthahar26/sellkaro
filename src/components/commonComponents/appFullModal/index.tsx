@@ -12,14 +12,7 @@ type props = {
   ContainerStyle?: any;
 };
 
-const AppFullModal = ({
-  visible,
-  children,
-  onClose,
-  headerView = <></>,
-  bottomView = <></>,
-  ContainerStyle,
-}: props) => {
+const AppFullModal = ({visible, children, onClose}: props) => {
   return (
     <Modal
       animationType="fade"
