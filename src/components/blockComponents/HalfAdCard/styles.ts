@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
     marginTop: scale(5),
   },
   image: {
-    height: 80,
-    resizeMode: 'stretch',
+    height: scale(80),
+    resizeMode: 'cover',
     marginTop: scale(5),
     marginBottom: scale(5),
   },

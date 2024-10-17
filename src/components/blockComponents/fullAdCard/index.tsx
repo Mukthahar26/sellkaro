@@ -11,10 +11,10 @@ import {renderType} from '../adsList/props';
 import TypeOfAdData from '../typeOfAdData';
 import Card from '../../commonComponents/card';
 import AppButton from '../../commonComponents/AppButton';
-import Swiper from 'react-native-swiper';
 import FastImage from 'react-native-fast-image';
 import AppText from '../../commonComponents/AppText';
 import Loader from '../../commonComponents/loader';
+import CustomImageSlider from '../../commonComponents/imageSliider';
 
 type PropsType = {
   onPress: (item: any) => void;
@@ -36,35 +36,16 @@ const FullAdCard = ({item, onPress}: renderType & PropsType) => {
       <AppButton style={styles.button} onPress={() => onPress(item)}>
         <View style={styles.ButtonCard}>
           <View style={styles.slideCol}>
-            <Swiper style={styles.image} showsButtons={false}>
-              {imageUrl.map((item, index) => (
-                <View style={styles.imageContainer}>
-                  {loading && <Loader style={styles.loading} />}
-                  <FastImage
-                    source={{uri: item}}
-                    style={styles.image}
-                    onLoadStart={() => {
-                      // Show loading indicator
-                      const newLoadingState = [...loading];
-                      newLoadingState[index] = true;
-                      setLoading(newLoadingState);
-                    }}
-                    onLoadEnd={() => {
-                      // Hide loading indicator
-                      const newLoadingState = [...loading];
-                      newLoadingState[index] = false;
-                      setLoading(newLoadingState);
-                    }}
-                    onError={() => {
-                      // Hide loading indicator on error
-                      const newLoadingState = [...loading];
-                      newLoadingState[index] = false;
-                      setLoading(newLoadingState);
-                    }}
-                  />
-                </View>
-              ))}
-            </Swiper>
+            {/* <SliderBox
+              images={imageUrl}
+              dotColor={colorThemes.whiteBackground}
+              inactiveDotColor={colorThemes.black40}
+              circleLoop
+              ImageComponent={FastImage}
+              ImageComponentStyle={styles.image}
+              imageLoadingColor={colorThemes.brandColor}
+            /> */}
+            <CustomImageSlider imageList={imageUrl} />
           </View>
           <View style={styles.contentCol}>
             <View style={styles.dateAndFav}>

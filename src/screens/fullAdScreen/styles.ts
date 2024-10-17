@@ -20,10 +20,6 @@ export default StyleSheet.create({
     fontWeight: '700',
     lineHeight: scale(22),
   },
-  image: {
-    backgroundColor: colorThemes.whiteBackground,
-    elevation: scale(10),
-  },
   shadeBlack: {
     position: 'absolute',
     width: '100%',

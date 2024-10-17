@@ -16,6 +16,7 @@ import {scale} from 'react-native-size-matters';
 import AppButton from '../../components/commonComponents/AppButton';
 import Share from 'react-native-share';
 import {
+  convertWidthPercentageToValue,
   formatDate,
   getBGColorOfStatus,
   getBase64WithUri,
@@ -27,8 +28,8 @@ import Card from '../../components/commonComponents/card';
 import AdSenseAdBanner from '../../components/blockComponents/adSenseAdBanner';
 import globalStyles from '../../global/globalStyles';
 import {useNavigation} from '@react-navigation/native';
-import Swiper from 'react-native-swiper';
 import Loader from '../../components/commonComponents/loader';
+import CustomImageSlider from '../../components/commonComponents/imageSliider';
 
 type Props = NativeStackScreenProps<
   RootStackParamList,
@@ -88,39 +89,23 @@ const FullAdScreen = ({route}: Props) => {
   const navigateToProfile = () =>
     navigation.navigate(screenNames.ROOTPROFILESCREEN);
 
+  console.log('imageUrl', imageUrl);
   return (
     <View style={styles.container}>
       <ScreenHeader isBackRequired headerName={title} />
-      <Card>
-        <Swiper style={styles.image} showsButtons={false}>
-          {imageUrl.map((item, index) => (
-            <View style={styles.image}>
-              {loading && <Loader style={styles.loading} />}
-              <FastImage
-                source={{uri: item}}
-                style={styles.image}
-                onLoadStart={() => {
-                  // Show loading indicator
-                  const newLoadingState = [...loading];
-                  newLoadingState[index] = true;
-                  setLoading(newLoadingState);
-                }}
-                onLoadEnd={() => {
-                  // Hide loading indicator
-                  const newLoadingState = [...loading];
-                  newLoadingState[index] = false;
-                  setLoading(newLoadingState);
-                }}
-                onError={() => {
-                  // Hide loading indicator on error
-                  const newLoadingState = [...loading];
-                  newLoadingState[index] = false;
-                  setLoading(newLoadingState);
-                }}
-              />
-            </View>
-          ))}
-        </Swiper>
+      <Card style={{height: 200}}>
+        {/* <SliderBox
+          disableOnPress
+          images={imageUrl}
+          dotColor={colorThemes.whiteBackground}
+          inactiveDotColor={colorThemes.black40}
+          circleLoop
+          ImageComponent={FastImage}
+          ImageComponentStyle={styles.image}
+          imageLoadingColor={colorThemes.brandColor}
+          parentWidth={convertWidthPercentageToValue(40)}
+        /> */}
+        <CustomImageSlider imageList={imageUrl} />
       </Card>
       {isArray(imageUrl) && (
         <AppButton onPress={shareAd} style={styles.shareBtn}>
