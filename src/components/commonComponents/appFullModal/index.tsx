@@ -10,12 +10,18 @@ type props = {
   headerView?: any;
   bottomView?: any;
   ContainerStyle?: any;
+  animationType?: 'slide' | 'none' | 'fade' | undefined;
 };
 
-const AppFullModal = ({visible, children, onClose}: props) => {
+const AppFullModal = ({
+  visible,
+  children,
+  onClose,
+  animationType = 'slide',
+}: props) => {
   return (
     <Modal
-      animationType="fade"
+      animationType={animationType}
       transparent
       onRequestClose={onClose}
       visible={visible}>
