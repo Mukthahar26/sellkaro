@@ -19,13 +19,14 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import InputModal from '../../components/blockComponents/inputModal';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../navigators/rootStackNavigator';
 import ScreenHeader from '../../components/blockComponents/screenHeader';
 import sizeValues from '../../themes/sizeValues';
+import {bottomNavigatorParams} from '../../navigators/bottomNavigator';
+import {RootStackParamList} from '../../navigators/rootStackNavigator';
 
 type Props = NativeStackScreenProps<
-  RootStackParamList,
-  screenNames.ROOTPROFILESCREEN
+  bottomNavigatorParams | RootStackParamList,
+  screenNames.PROFILE
 >;
 const Profile = ({route}: Props) => {
   const navigation = useNavigation<any>();
@@ -33,7 +34,7 @@ const Profile = ({route}: Props) => {
   const [isNotificationEnable, setIsNotificationEnable] = useState(true);
   const [visibleNameModal, setVisibleNameModal] = useState(false);
   const [userName, setUserName] = useState('');
-  const backIsRequired = route.params && route.params.backIsRequired;
+  const backIsRequired = route.params && route.params?.backIsRequired;
   const onSwitchNotification = () => {
     setIsNotificationEnable(!isNotificationEnable);
   };

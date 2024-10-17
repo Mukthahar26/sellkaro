@@ -91,11 +91,11 @@ const styles = StyleSheet.create({
     borderRadius: scale(20) / 2,
   },
   dot: {
-    height: 10,
-    width: 10,
-    borderRadius: 5,
+    height: scale(8),
+    width: scale(8),
+    borderRadius: scale(8) / 2,
     backgroundColor: colorThemes.whiteBackground,
-    marginHorizontal: 5,
+    marginHorizontal: scale(3),
   },
 });
 

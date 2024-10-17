@@ -29,7 +29,7 @@ export type RootStackParamList = {
   };
   [screenNames.CHATSCREEN]: {item: any};
   [screenNames.SUPPORT]: undefined;
-  [screenNames.ROOTPROFILESCREEN]: {
+  [screenNames.PROFILE]: {
     backIsRequired?: boolean;
   };
   [screenNames.POSTAD]: undefined;
@@ -56,7 +56,7 @@ const RootStackNavigator = () => {
       <RootStack.Screen name={screenNames.SUPPORT} component={Support} />
       <RootStack.Screen name={screenNames.POSTAD} component={PostAd} />
       <RootStack.Screen
-        name={screenNames.ROOTPROFILESCREEN}
+        name={screenNames.PROFILE}
         component={Profile}
         initialParams={{backIsRequired: true}}
       />

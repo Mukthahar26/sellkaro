@@ -9,6 +9,9 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import {isFieldEmpty} from '../utilities/utils';
 import {scale} from 'react-native-size-matters';
 import AppText from '../components/commonComponents/AppText';
+import MyAds from '../screens/myAds';
+import Chat from '../screens/chat';
+import Profile from '../screens/profile';
 
 export type bottomNavigatorParams = {
   [screenNames.HOME]: undefined;
@@ -78,7 +81,7 @@ const BottomNavigator = () => {
             }),
         }}
         name={screenNames.MYADS}
-        component={Home}
+        component={MyAds}
       />
       <Tab.Screen
         listeners={({navigation}) => ({
@@ -108,7 +111,7 @@ const BottomNavigator = () => {
             }),
         }}
         name={screenNames.CHATSCREEN}
-        component={Home}
+        component={Chat}
       />
       <Tab.Screen
         options={{
@@ -120,7 +123,7 @@ const BottomNavigator = () => {
             }),
         }}
         name={screenNames.PROFILE}
-        component={Home}
+        component={Profile}
       />
     </Tab.Navigator>
   );
