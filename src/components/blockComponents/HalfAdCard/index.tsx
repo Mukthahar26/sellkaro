@@ -55,18 +55,11 @@ const HalfAdCard = ({item, onPress}: renderType & PropsType) => {
                 )}
               </AppButton>
             </View>
-            <CustomImageSlider imageStyle={styles.image} imageList={imageUrl} />
-            {/* <SliderBox
-              disableOnPress
-              images={imageUrl}
-              dotColor={colorThemes.whiteBackground}
-              inactiveDotColor={colorThemes.black40}
-              circleLoop
-              ImageComponent={FastImage}
-              ImageComponentStyle={styles.image}
-              imageLoadingColor={colorThemes.brandColor}
-              parentWidth={convertWidthPercentageToValue(40)}
-            /> */}
+            <CustomImageSlider
+              containerStyle={styles.containerStyle}
+              imageStyle={styles.image}
+              imageList={imageUrl}
+            />
             <AppText style={styles.title} numberOfLines={1}>
               {title}
             </AppText>

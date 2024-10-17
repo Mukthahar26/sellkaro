@@ -36,15 +36,6 @@ const FullAdCard = ({item, onPress}: renderType & PropsType) => {
       <AppButton style={styles.button} onPress={() => onPress(item)}>
         <View style={styles.ButtonCard}>
           <View style={styles.slideCol}>
-            {/* <SliderBox
-              images={imageUrl}
-              dotColor={colorThemes.whiteBackground}
-              inactiveDotColor={colorThemes.black40}
-              circleLoop
-              ImageComponent={FastImage}
-              ImageComponentStyle={styles.image}
-              imageLoadingColor={colorThemes.brandColor}
-            /> */}
             <CustomImageSlider imageList={imageUrl} />
           </View>
           <View style={styles.contentCol}>

@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Animated,
   ImageStyle,
+  ViewStyle,
 } from 'react-native';
 import {scale} from 'react-native-size-matters';
 import {colorThemes} from '../../../themes/colors';
@@ -17,9 +18,10 @@ const {width} = Dimensions.get('window');
 type Props = {
   imageList: string[];
   imageStyle?: ImageStyle;
+  containerStyle?: ViewStyle;
 };
 
-const CustomImageSlider = ({imageList, imageStyle}: Props) => {
+const CustomImageSlider = ({imageList, imageStyle, containerStyle}: Props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollX = useRef(new Animated.Value(0)).current;
   const flatListRef = useRef(null);
@@ -41,7 +43,7 @@ const CustomImageSlider = ({imageList, imageStyle}: Props) => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, containerStyle]}>
       <FlatList
         data={imageList}
         renderItem={renderItem}
@@ -71,7 +73,8 @@ const CustomImageSlider = ({imageList, imageStyle}: Props) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: scale(180),
+    width: width,
   },
   image: {
     width: width,
@@ -80,7 +83,7 @@ const styles = StyleSheet.create({
   pagination: {
     flexDirection: 'row',
     position: 'absolute',
-    bottom: 20,
+    bottom: scale(8),
     alignSelf: 'center',
     alignItems: 'center',
     backgroundColor: colorThemes.modalbgColor,

@@ -2,6 +2,7 @@ import {StyleSheet} from 'react-native';
 import {colorThemes} from '../../../themes/colors';
 import sizeValues from '../../../themes/sizeValues';
 import {scale} from 'react-native-size-matters';
+import {convertWidthPercentageToValue} from '../../../utilities/utils';
 
 const styles = StyleSheet.create({
   card: {
@@ -19,6 +20,10 @@ const styles = StyleSheet.create({
     color: colorThemes.black1,
     fontSize: sizeValues.fontNormal,
     marginTop: scale(5),
+  },
+  containerStyle: {
+    width: convertWidthPercentageToValue(39),
+    height: scale(80),
   },
   image: {
     height: scale(80),

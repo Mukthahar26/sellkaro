@@ -93,20 +93,8 @@ const FullAdScreen = ({route}: Props) => {
   return (
     <View style={styles.container}>
       <ScreenHeader isBackRequired headerName={title} />
-      <Card style={{height: 200}}>
-        {/* <SliderBox
-          disableOnPress
-          images={imageUrl}
-          dotColor={colorThemes.whiteBackground}
-          inactiveDotColor={colorThemes.black40}
-          circleLoop
-          ImageComponent={FastImage}
-          ImageComponentStyle={styles.image}
-          imageLoadingColor={colorThemes.brandColor}
-          parentWidth={convertWidthPercentageToValue(40)}
-        /> */}
-        <CustomImageSlider imageList={imageUrl} />
-      </Card>
+      <CustomImageSlider imageList={imageUrl} />
+
       {isArray(imageUrl) && (
         <AppButton onPress={shareAd} style={styles.shareBtn}>
           <MaterialCommunityIcons
