@@ -1,6 +1,6 @@
 import React from 'react';
 import ContainerView from '../../components/commonComponents/ContainerView';
-import {vehiclesCategoryList} from '../../utilities/databaseData';
+import {subCategoryList} from '../../utilities/databaseData';
 import {RootStackParamList} from '../../navigators/rootStackNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {screenNames} from '../../constants/contants';
@@ -21,7 +21,7 @@ const SubCategoryList = ({navigation, route}: Props) => {
   return (
     <ContainerView headerName={label}>
       <MenuListWithIndexNum
-        list={vehiclesCategoryList}
+        list={subCategoryList[label] || []}
         onPressItem={navigateToAds}
       />
     </ContainerView>

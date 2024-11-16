@@ -1,17 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View} from 'react-native';
 import styles from './styles';
-import {
-  convertWidthPercentageToValue,
-  formatDate,
-} from '../../../utilities/utils';
+import {formatDate} from '../../../utilities/utils';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {colorThemes} from '../../../themes/colors';
 import {renderType} from '../adsList/props';
 import TypeOfAdData from '../typeOfAdData';
 import Card from '../../commonComponents/card';
 import AppButton from '../../commonComponents/AppButton';
-import FastImage from 'react-native-fast-image';
 import AppText from '../../commonComponents/AppText';
 import Loader from '../../commonComponents/loader';
 import CustomImageSlider from '../../commonComponents/imageSliider';
@@ -30,13 +26,16 @@ const FullAdCard = ({item, onPress}: renderType & PropsType) => {
     imageUrl,
     properties,
   } = item;
-  const [loading, setLoading] = useState(Array(imageUrl.length).fill(true));
   return (
     <Card style={styles.card}>
       <AppButton style={styles.button} onPress={() => onPress(item)}>
         <View style={styles.ButtonCard}>
           <View style={styles.slideCol}>
-            <CustomImageSlider imageList={imageUrl} />
+            <CustomImageSlider
+              imageStyle={styles.image}
+              containerStyle={styles.imageContainer}
+              imageList={imageUrl}
+            />
           </View>
           <View style={styles.contentCol}>
             <View style={styles.dateAndFav}>

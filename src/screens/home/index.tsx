@@ -1,17 +1,12 @@
-import React, {useState} from 'react';
-import {FlatList, View} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View} from 'react-native';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {scale} from 'react-native-size-matters';
 import {colorThemes} from '../../themes/colors';
-import IconWithLabelBox from '../../components/blockComponents/iconWithLabel';
 import SearchedTextList from '../../components/blockComponents/searchedTextList';
-import {
-  exloreCategoryList,
-  recentlyAddedList,
-  searchTags,
-} from '../../utilities/databaseData';
+import {recentlyAddedList, searchTags} from '../../utilities/databaseData';
 import AdsList from '../../components/blockComponents/adsList';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {screenNames} from '../../constants/contants';
@@ -23,12 +18,19 @@ import {RootStackParamList} from '../../navigators/rootStackNavigator';
 import Card from '../../components/commonComponents/card';
 import AppButton from '../../components/commonComponents/AppButton';
 import AppInput from '../../components/commonComponents/AppInput';
+import AdMenu from '../../components/blockComponents/adMenu';
+import useFetchMenuList from '../../Zustand/asyncActions/fetchMenuList';
 
 type Props = NativeStackScreenProps<RootStackParamList, screenNames.HOME>;
 
 const Home = ({navigation}: Props) => {
   const [isGridRequired, setIsGridRequired] = useState(true);
   const [openLocationModal, setOpenLocationModal] = useState(false);
+  const {menuList, isLoading, fetchMenuList} = useFetchMenuList();
+
+  useEffect(() => {
+    fetchMenuList();
+  }, []);
 
   const navigateToCategoryList = (item: any) => {
     navigation.navigate(screenNames.SUBCATEGORYLIST, item);
@@ -42,6 +44,7 @@ const Home = ({navigation}: Props) => {
     <ContainerView
       isIgnoreBottomBar
       isHeaderRequired={false}
+      isLoading={isLoading}
       style={styles.container}>
       <SearchLocationModal
         visible={openLocationModal}
@@ -88,18 +91,7 @@ const Home = ({navigation}: Props) => {
       <View style={styles.subContainer}>
         <AppText style={styles.categoryLabel}>Explore Categories</AppText>
         <Card style={styles.categoriesCard}>
-          <FlatList
-            data={exloreCategoryList}
-            numColumns={2}
-            columnWrapperStyle={styles.columnWrapper}
-            keyExtractor={(_, index) => index.toString()}
-            renderItem={({item}) => (
-              <IconWithLabelBox
-                onPress={() => navigateToCategoryList(item)}
-                item={item}
-              />
-            )}
-          />
+          <AdMenu list={menuList} onPressItem={navigateToCategoryList} />
         </Card>
         <View style={[styles.labelView, {justifyContent: 'space-between'}]}>
           <View style={styles.labelView}>

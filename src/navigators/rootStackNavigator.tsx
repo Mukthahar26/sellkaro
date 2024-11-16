@@ -8,8 +8,9 @@ import AdList from '../screens/adList';
 import FullAdScreen from '../screens/fullAdScreen';
 import Chat from '../screens/chat';
 import Support from '../screens/support';
-import PostAd from '../screens/adPostScreens/postAd';
+import AdPostMenu from '../screens/adPostScreens/adPostMenu';
 import Profile from '../screens/profile';
+import CreateAd from '../screens/adPostScreens/createAd';
 
 export type RootStackParamList = {
   [screenNames.HOME]: undefined;
@@ -33,6 +34,7 @@ export type RootStackParamList = {
     backIsRequired?: boolean;
   };
   [screenNames.POSTAD]: undefined;
+  [screenNames.CREATEAD]: undefined;
 };
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
@@ -54,7 +56,8 @@ const RootStackNavigator = () => {
       />
       <RootStack.Screen name={screenNames.CHATSCREEN} component={Chat} />
       <RootStack.Screen name={screenNames.SUPPORT} component={Support} />
-      <RootStack.Screen name={screenNames.POSTAD} component={PostAd} />
+      <RootStack.Screen name={screenNames.POSTAD} component={AdPostMenu} />
+      <RootStack.Screen name={screenNames.CREATEAD} component={CreateAd} />
       <RootStack.Screen
         name={screenNames.PROFILE}
         component={Profile}

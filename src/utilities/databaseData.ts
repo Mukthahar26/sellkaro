@@ -50,6 +50,72 @@ export const exloreCategoryList = [
   },
 ];
 
+export const AdPostProperties = [
+  {
+    id: 1,
+    name: 'Brand Name',
+    data: [],
+  },
+  {
+    id: 2,
+    name: 'Fuel Type',
+    data: ['CNG', 'diesel', 'Electric', 'LPG', 'Petrol'],
+  },
+  {
+    id: 3,
+    name: 'Transmission',
+    data: ['Automatic', 'Manual'],
+  },
+  {
+    id: 4,
+    name: 'Driven',
+    data: [],
+  },
+  {
+    id: 5,
+    name: 'Year',
+    data: [],
+  },
+  {
+    id: 6,
+    name: 'Nof of Rooms',
+    data: [],
+  },
+  {
+    id: 7,
+    name: 'Property type',
+    data: [],
+  },
+  {
+    id: 8,
+    name: 'Model',
+    data: [],
+  },
+];
+
+export const subCategoryList: any = {
+  Vehcles: [
+    {id: '9329jaesdjo', label: 'Cars'},
+    {id: '9329jaesdjo', label: 'Bikes'},
+    {id: '9329jaesdjo', label: 'Scooters'},
+    {id: '9329jaesdjo', label: 'Bicycles'},
+    {id: '9329jaesdjo', label: 'Spare Parts'},
+    {id: '9329jaesdjo', label: 'View All'},
+  ],
+  Mobile: [
+    {id: '9329jaesdjo', label: 'Phones'},
+    {id: '9329jaesdjo', label: 'Accessories'},
+    {id: '9329jaesdjo', label: 'View All'},
+  ],
+  EState: [
+    {id: '9329jaesdjo', label: 'Rent'},
+    {id: '9329jaesdjo', label: 'Buy'},
+    {id: '9329jaesdjo', label: 'Plot'},
+    {id: '9329jaesdjo', label: 'Apartment'},
+    {id: '9329jaesdjo', label: 'View All'},
+  ],
+};
+
 export const carsList = [
   {
     title: 'Mercedez-Benz 2020 model in excellent condition',
@@ -69,7 +135,7 @@ export const carsList = [
     ],
     properties: [
       {label: 'Driven', value: '200000'},
-      {label: 'Fuel Type', value: 'PETROL'},
+      {label: 'Fuel Type', value: 'Petrol'},
       {label: 'No Of Owners', value: '1st'},
       {label: 'Transmission', value: 'Automatic'},
       {label: 'Brand Name', value: 'Suzuki'},
@@ -94,7 +160,7 @@ export const bikesList = [
     ],
     properties: [
       {label: 'Driven', value: '8000'},
-      {label: 'Fuel Type', value: 'PETROL'},
+      {label: 'Fuel Type', value: 'Petrol'},
       {label: 'No Of Owners', value: '1st'},
       {label: 'Brand Name', value: 'TVS'},
       {label: 'Year', value: '2014'},
@@ -500,13 +566,4 @@ export const recentlyAddedList = [
   ...vehicleSparePartsList,
   ...bikesList,
   ...carsList,
-];
-
-export const vehiclesCategoryList = [
-  {id: '9329jaesdjo', label: 'Cars'},
-  {id: '9329jaesdjo', label: 'Bikes'},
-  {id: '9329jaesdjo', label: 'Scooters'},
-  {id: '9329jaesdjo', label: 'Bicycles'},
-  {id: '9329jaesdjo', label: 'Spare Parts'},
-  {id: '9329jaesdjo', label: 'View All'},
 ];

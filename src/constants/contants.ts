@@ -16,6 +16,7 @@ export enum screenNames {
   CHATSCREEN = 'CHATSCREEN',
   SUPPORT = 'SUPPORT',
   ROOTPROFILESCREEN = 'ROOTPROFILESCREEN',
+  CREATEAD = 'CREATEAD',
 }
 
 export const adSubType = {

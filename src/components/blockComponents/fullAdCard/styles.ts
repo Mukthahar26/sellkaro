@@ -18,10 +18,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   image: {
-    height: 120,
-    resizeMode: 'stretch',
     marginTop: scale(5),
     marginBottom: scale(5),
+    height: '100%',
   },
   slideCol: {
     flex: 35,
@@ -61,7 +60,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    height: 80,
+    height: '100%',
   },
   loading: {
     position: 'absolute',

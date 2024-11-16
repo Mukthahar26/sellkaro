@@ -1,6 +1,6 @@
 export enum colorThemes {
   //brown=#ad681d, green = #029607
-  brandColor = '#029607',
+  brandColor = '#ad681d',
 
   whiteBackground = '#ffffff',
   whiteTextColor = '#ffffff',

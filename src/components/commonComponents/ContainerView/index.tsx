@@ -5,6 +5,7 @@ import {useNavigation} from '@react-navigation/native';
 import ScreenHeader from '../../blockComponents/screenHeader';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {scale} from 'react-native-size-matters';
+import AppModalLoader from '../appModalLoader';
 
 const {height} = Dimensions.get('window');
 
@@ -19,6 +20,7 @@ type props = {
   isScrollRequired: boolean;
   isHeaderRequired?: boolean;
   isIgnoreBottomBar?: boolean;
+  isLoading?: boolean;
 };
 const ContainerView = ({
   children,
@@ -29,8 +31,13 @@ const ContainerView = ({
   isHeaderRequired,
   isScrollRequired,
   isIgnoreBottomBar,
+  isLoading,
 }: props) => {
   const navigation = useNavigation<any>();
+
+  if (isLoading) {
+    return <AppModalLoader />;
+  }
   return (
     <SafeAreaView style={[{flex: 1}, mainContainerStyle]}>
       {(isHeaderRequired || headerName) && navigation.canGoBack() && (
