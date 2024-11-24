@@ -6,14 +6,14 @@ import sizeValues from '../../../themes/sizeValues';
 const styles = StyleSheet.create({
   textField: {
     color: colorThemes.black1,
-    height: scale(45),
+    minHeight: scale(45),
     padding: scale(10),
     fontSize: sizeValues.fontMedium,
+    width: '100%',
   },
   inputView: {
-    height: scale(45),
+    minHeight: scale(45),
     borderWidth: 1,
-    padding: scale(10),
     borderColor: colorThemes.black40,
     backgroundColor: colorThemes.whiteBackground,
     borderRadius: scale(5),

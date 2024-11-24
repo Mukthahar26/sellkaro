@@ -5,6 +5,7 @@ import {RootStackParamList} from '../../navigators/rootStackNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {screenNames} from '../../constants/contants';
 import MenuListWithIndexNum from '../../components/blockComponents/menuListWithIndexNum';
+import {useComingFromState} from '../../Zustand/localState';
 
 type Props = NativeStackScreenProps<
   RootStackParamList,
@@ -14,9 +15,14 @@ type Props = NativeStackScreenProps<
 const SubCategoryList = ({navigation, route}: Props) => {
   const params = route?.params && route?.params;
   const {label = ''} = params;
+  const {value} = useComingFromState();
+
+  console.log('222222222222222', value);
 
   const navigateToAds = (item: any) => {
-    navigation.navigate(screenNames.ADLIST, item);
+    if (value === screenNames.POSTAD)
+      navigation.navigate(screenNames.CREATEAD, item);
+    else navigation.navigate(screenNames.ADLIST, item);
   };
   return (
     <ContainerView headerName={label}>

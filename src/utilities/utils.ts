@@ -71,3 +71,10 @@ export const getBGColorOfStatus = (status: string) => {
   else if (status === postStatus.EXPIRED) return colorThemes.red;
   else if (status === postStatus.DEACTIVATED) return colorThemes.black40;
 };
+
+export const getLast30years = () => {
+  const currentYear = new Date().getFullYear();
+  const years = Array.from({length: 31}, (_, index) => currentYear - index);
+  console.log(years);
+  return years;
+};

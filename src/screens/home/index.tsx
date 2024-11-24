@@ -26,7 +26,7 @@ type Props = NativeStackScreenProps<RootStackParamList, screenNames.HOME>;
 const Home = ({navigation}: Props) => {
   const [isGridRequired, setIsGridRequired] = useState(true);
   const [openLocationModal, setOpenLocationModal] = useState(false);
-  const {menuList, isLoading, fetchMenuList} = useFetchMenuList();
+  const {menuList, isMenuListLoading, fetchMenuList} = useFetchMenuList();
 
   useEffect(() => {
     fetchMenuList();
@@ -44,7 +44,7 @@ const Home = ({navigation}: Props) => {
     <ContainerView
       isIgnoreBottomBar
       isHeaderRequired={false}
-      isLoading={isLoading}
+      isLoading={isMenuListLoading}
       style={styles.container}>
       <SearchLocationModal
         visible={openLocationModal}

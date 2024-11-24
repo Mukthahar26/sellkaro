@@ -1,10 +1,7 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
 import styles from './styles';
-import {
-  convertWidthPercentageToValue,
-  formatDate,
-} from '../../../utilities/utils';
+import {formatDate} from '../../../utilities/utils';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {colorThemes} from '../../../themes/colors';
 import {renderType} from '../adsList/props';

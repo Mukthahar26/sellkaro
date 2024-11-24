@@ -1,29 +1,31 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './styles';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../../navigators/rootStackNavigator';
-import {screenNames} from '../../../constants/contants';
-import AdMenu from '../../../components/blockComponents/adMenu';
-import {exloreCategoryList} from '../../../utilities/databaseData';
 import ContainerView from '../../../components/commonComponents/ContainerView';
 import {} from 'zustand';
-import {comingFromState} from '../../../Zustand/localState';
+import AppInput from '../../../components/commonComponents/AppInput';
+import useAdPostProperties from '../../../Zustand/asyncActions/fetchAdFields';
+import {isArray} from '../../../utilities/utils';
+import RenderAdProperties from '../../../components/blockComponents/renderAdProprties';
 
-type Props = NativeStackScreenProps<RootStackParamList, screenNames.CREATEAD>;
+const CreateAd = () => {
+  const {adPropertiesList, fetchMenuList} = useAdPostProperties();
 
-const CreateAd = ({navigation}: Props) => {
-  const navigateToCategoryList = (item: any) => {
-    comingFromState().setValue(screenNames.POSTAD);
-    navigation.navigate(screenNames.SUBCATEGORYLIST, item);
-  };
+  useEffect(() => {
+    fetchMenuList();
+  }, []);
 
   return (
-    <ContainerView headerName="Select Category" style={styles.container}>
-      <AdMenu
-        numColumns={1}
-        list={exloreCategoryList}
-        onPressItem={navigateToCategoryList}
-        itemStyle={styles.itemStyle}
+    <ContainerView headerName="Create Your Ad" style={styles.container}>
+      <AppInput placeholder="Title" />
+      {isArray(adPropertiesList) &&
+        adPropertiesList.map((item, index) => {
+          return <RenderAdProperties key={index} item={item} />;
+        })}
+      <AppInput
+        placeholder="Description"
+        multiline={true}
+        inputStyle={styles.description}
+        style={styles.inputcontainer}
       />
     </ContainerView>
   );

@@ -8163,6 +8163,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-select-dropdown@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "react-native-select-dropdown@npm:4.0.1"
+  checksum: 0f841ec81921e4f79959c883a1c83570e60b9fe28bbf075892aec75edf9bfd5506a7d71221fce388bf664a9d863785fc10a87dac3a27a9cdac248da909611ddd
+  languageName: node
+  linkType: hard
+
 "react-native-share@npm:^11.0.3":
   version: 11.0.4
   resolution: "react-native-share@npm:11.0.4"
@@ -8709,6 +8716,7 @@ __metadata:
     react-native-image-slider-box: 2.0.7
     react-native-safe-area-context: ^4.11.0
     react-native-screens: ^3.34.0
+    react-native-select-dropdown: ^4.0.1
     react-native-share: ^11.0.3
     react-native-size-matters: ^0.4.2
     react-native-vector-icons: ^10.2.0

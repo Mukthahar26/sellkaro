@@ -7,12 +7,15 @@ import AdMenu from '../../../components/blockComponents/adMenu';
 import {exloreCategoryList} from '../../../utilities/databaseData';
 import ContainerView from '../../../components/commonComponents/ContainerView';
 import {} from 'zustand';
-import {comingFromState} from '../../../Zustand/localState';
+import {useComingFromState} from '../../../Zustand/localState';
 
 type Props = NativeStackScreenProps<RootStackParamList, screenNames.POSTAD>;
 const AdPostMenu = ({navigation}: Props) => {
+  const {setValue} = useComingFromState();
+
   const navigateToCategoryList = (item: any) => {
-    comingFromState().setValue(screenNames.POSTAD);
+    setValue(screenNames.POSTAD);
+    console.log('1111111111111111', screenNames.POSTAD);
     navigation.navigate(screenNames.SUBCATEGORYLIST, item);
   };
 

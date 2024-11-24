@@ -83,11 +83,6 @@ export const AdPostProperties = [
   },
   {
     id: 7,
-    name: 'Property type',
-    data: [],
-  },
-  {
-    id: 8,
     name: 'Model',
     data: [],
   },

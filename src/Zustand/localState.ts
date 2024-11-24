@@ -1,6 +1,6 @@
 import {create} from 'zustand';
 
-export const comingFromState = create<{
+export const useComingFromState = create<{
   value: string;
   setValue: (newValue: string) => void;
 }>(set => ({

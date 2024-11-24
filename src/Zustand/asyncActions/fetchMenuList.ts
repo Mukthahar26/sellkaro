@@ -3,9 +3,9 @@ import {immer} from 'zustand/middleware/immer';
 import {exloreCategoryList} from '../../utilities/databaseData';
 
 type InitialStateType = {
-  isLoading: boolean;
+  isMenuListLoading: boolean;
   menuList: any[];
-  ErrorMessage: string | null;
+  ErrorMenuListMessage: string | null;
 };
 
 type asyncFuncType = {
@@ -13,9 +13,9 @@ type asyncFuncType = {
 };
 
 const initialState: InitialStateType = {
-  isLoading: false,
+  isMenuListLoading: false,
   menuList: [],
-  ErrorMessage: null,
+  ErrorMenuListMessage: null,
 };
 
 const useFetchMenuList = create<InitialStateType & asyncFuncType>()(
@@ -23,21 +23,21 @@ const useFetchMenuList = create<InitialStateType & asyncFuncType>()(
     ...initialState,
     fetchMenuList: async () => {
       set(state => {
-        state.isLoading = true;
-        state.ErrorMessage = null;
+        state.isMenuListLoading = true;
+        state.ErrorMenuListMessage = null;
         state.menuList = [];
       });
       try {
         const response = exloreCategoryList;
         set(state => {
           state.menuList = response;
-          state.isLoading = false;
-          state.ErrorMessage = null;
+          state.isMenuListLoading = false;
+          state.ErrorMenuListMessage = null;
         });
       } catch (error) {
         set(state => {
-          state.ErrorMessage = (error as Error).message;
-          state.isLoading = false;
+          state.ErrorMenuListMessage = (error as Error).message;
+          state.isMenuListLoading = false;
           state.menuList = [];
         });
       }

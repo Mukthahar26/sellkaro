@@ -14,6 +14,7 @@ type Props = {
   keyboardType?: 'numeric' | 'default';
   autoFocus?: boolean;
   value?: string;
+  searchVisible?: boolean;
 };
 const AppInput = ({
   onChangeText,
@@ -24,10 +25,11 @@ const AppInput = ({
   keyboardType,
   autoFocus,
   value,
+  searchVisible = false,
 }: Props) => {
   return (
     <View style={[styles.inputView, style]}>
-      <AntDesign name="search1" size={scale(15)} />
+      {searchVisible && <AntDesign name="search1" size={scale(15)} />}
       <TextInput
         value={value}
         autoFocus={autoFocus}
