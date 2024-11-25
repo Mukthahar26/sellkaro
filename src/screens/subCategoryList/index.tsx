@@ -13,11 +13,8 @@ type Props = NativeStackScreenProps<
 >;
 
 const SubCategoryList = ({navigation, route}: Props) => {
-  const params = route?.params && route?.params;
-  const {label = ''} = params;
+  const {label = ''} = route?.params;
   const {value} = useComingFromState();
-
-  console.log('222222222222222', value);
 
   const navigateToAds = (item: any) => {
     if (value === screenNames.POSTAD)

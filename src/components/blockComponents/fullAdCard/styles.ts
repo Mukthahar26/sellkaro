@@ -5,9 +5,8 @@ import {scale} from 'react-native-size-matters';
 
 const styles = StyleSheet.create({
   card: {
-    padding: sizeValues.size10,
-    paddingTop: scale(4),
-    paddingBottom: scale(4),
+    paddingHorizontal: sizeValues.size10,
+    paddingVertical: scale(4),
     marginBottom: sizeValues.size10,
   },
   button: {

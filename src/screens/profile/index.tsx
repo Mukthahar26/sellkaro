@@ -24,10 +24,10 @@ import sizeValues from '../../themes/sizeValues';
 import {bottomNavigatorParams} from '../../navigators/bottomNavigator';
 import {RootStackParamList} from '../../navigators/rootStackNavigator';
 
-type Props = NativeStackScreenProps<
-  bottomNavigatorParams | RootStackParamList,
-  screenNames.PROFILE
->;
+type Props =
+  | NativeStackScreenProps<bottomNavigatorParams, screenNames.PROFILE>
+  | NativeStackScreenProps<RootStackParamList, screenNames.ROOTPROFILESCREEN>;
+
 const Profile = ({route}: Props) => {
   const navigation = useNavigation<any>();
   const {imageUrl, mobileNo, name} = profileData;

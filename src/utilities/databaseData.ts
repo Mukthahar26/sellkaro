@@ -113,6 +113,7 @@ export const subCategoryList: any = {
 
 export const carsList = [
   {
+    ADId: '12123234324343543534',
     title: 'Mercedez-Benz 2020 model in excellent condition',
     description: 'Best in class. Excellent look and condition.',
     type: 'VEHICLES',
@@ -142,6 +143,7 @@ export const carsList = [
 
 export const bikesList = [
   {
+    ADId: '12123234324343543534',
     title: 'Excellent conditions',
     description: 'Best in class. Excellent look and condition.',
     type: 'VEHICLES',
@@ -166,6 +168,7 @@ export const bikesList = [
 
 export const vehicleSparePartsList = [
   {
+    ADId: '12123234324343543534',
     title: 'Suzuki Suspension for sale',
     description: 'Best in class. Excellent look and condition.',
     type: 'VEHICLES',
@@ -182,6 +185,7 @@ export const vehicleSparePartsList = [
 
 export const phonesList = [
   {
+    ADId: '12123234324343543534',
     title: 'Iqoo 7 in excellent condition and ladies used with less used state',
     description:
       'Best in class. Excellent look and condition. Ladies used at home. No gaming, No heavy use. Just used for calls and social media. Nice phone. Best in class. Excellent look and condition. Ladies used at home. No gaming, No heavy use. Just used for calls and social media. Nice phone.',
@@ -205,6 +209,7 @@ export const phonesList = [
 
 export const houseList = [
   {
+    ADId: '12123234324343543534',
     title: 'Good facility house for rent',
     description: 'Best in class. Excellent look and condition.',
     type: 'PROPERTIES',
@@ -225,6 +230,7 @@ export const houseList = [
 
 export const landList = [
   {
+    ADId: '12123234324343543534',
     title: 'Land for sell',
     description: 'Best in class. Excellent look and condition.',
     type: 'PROPERTIES',
@@ -242,6 +248,7 @@ export const landList = [
 
 export const shopsList = [
   {
+    ADId: '12123234324343543534',
     title: 'Shop for rent for office purpose',
     description: 'Best in class. Excellent look and condition.',
     type: 'PROPERTIES',
@@ -262,6 +269,7 @@ export const shopsList = [
 
 export const pgList = [
   {
+    ADId: '12123234324343543534',
     title: 'Student PG in Indira Nagar',
     description: 'Best in class. Excellent look and condition.',
     type: 'PROPERTIES',
@@ -283,6 +291,7 @@ export const pgList = [
 
 export const entertainmentList = [
   {
+    ADId: '12123234324343543534',
     title: 'Home theater with 120W audio power',
     description: 'Best in class. Excellent look and condition.',
     type: 'ELECTRONICS',

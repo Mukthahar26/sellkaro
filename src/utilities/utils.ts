@@ -1,5 +1,5 @@
 import moment from 'moment';
-import {Dimensions, ToastAndroid} from 'react-native';
+import {Alert, Dimensions, ToastAndroid} from 'react-native';
 import {postStatus} from '../constants/contants';
 import {colorThemes} from '../themes/colors';
 
@@ -77,4 +77,26 @@ export const getLast30years = () => {
   const years = Array.from({length: 31}, (_, index) => currentYear - index);
   console.log(years);
   return years;
+};
+
+type ConfirmPopupProps = {
+  title?: string;
+  description: string;
+  positiveBtnLabel?: string;
+  nagativeBtnLabel?: string;
+  onClickPositive: () => void;
+  onClickNagative?: () => void;
+};
+export const confirmPopup = ({
+  title = 'Alert',
+  description,
+  positiveBtnLabel = 'YES',
+  nagativeBtnLabel = 'NO',
+  onClickPositive,
+  onClickNagative = () => {},
+}: ConfirmPopupProps) => {
+  Alert.alert(title, description, [
+    {text: nagativeBtnLabel, onPress: onClickNagative},
+    {text: positiveBtnLabel, onPress: onClickPositive},
+  ]);
 };

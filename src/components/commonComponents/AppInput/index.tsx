@@ -15,6 +15,7 @@ type Props = {
   autoFocus?: boolean;
   value?: string;
   searchVisible?: boolean;
+  maxLength?: number;
 };
 const AppInput = ({
   onChangeText,
@@ -26,6 +27,7 @@ const AppInput = ({
   autoFocus,
   value,
   searchVisible = false,
+  maxLength,
 }: Props) => {
   return (
     <View style={[styles.inputView, style]}>
@@ -38,7 +40,12 @@ const AppInput = ({
         placeholderTextColor={colorThemes.black40}
         multiline={multiline}
         onChangeText={e => onChangeText(e)}
-        style={[styles.textField, inputStyle]}
+        style={[
+          styles.textField,
+          multiline && {verticalAlign: 'top'},
+          inputStyle,
+        ]}
+        maxLength={maxLength}
       />
     </View>
   );

@@ -15,7 +15,6 @@ const AdPostMenu = ({navigation}: Props) => {
 
   const navigateToCategoryList = (item: any) => {
     setValue(screenNames.POSTAD);
-    console.log('1111111111111111', screenNames.POSTAD);
     navigation.navigate(screenNames.SUBCATEGORYLIST, item);
   };
 

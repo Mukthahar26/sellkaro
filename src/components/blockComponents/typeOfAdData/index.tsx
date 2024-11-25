@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import AppText from '../../commonComponents/AppText';
 import styles from './styles';
+import {propertiesType} from '../../../global/globalProps';
 
 type Props = {
   description: string;
-  properties: any[];
+  properties: propertiesType[];
 };
 
 const TypeOfAdData = ({description, properties}: Props) => {

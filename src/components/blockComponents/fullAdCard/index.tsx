@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, ViewStyle} from 'react-native';
 import styles from './styles';
 import {formatDate} from '../../../utilities/utils';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -9,13 +9,20 @@ import TypeOfAdData from '../typeOfAdData';
 import Card from '../../commonComponents/card';
 import AppButton from '../../commonComponents/AppButton';
 import AppText from '../../commonComponents/AppText';
-import Loader from '../../commonComponents/loader';
 import CustomImageSlider from '../../commonComponents/imageSliider';
+import {AdItemProps} from '../../../global/globalProps';
 
 type PropsType = {
-  onPress: (item: any) => void;
+  onPress: (item: AdItemProps) => void;
+  shouldHideFavoriteIcon?: boolean;
+  containerStyle?: ViewStyle;
 };
-const FullAdCard = ({item, onPress}: renderType & PropsType) => {
+const FullAdCard = ({
+  item,
+  onPress,
+  shouldHideFavoriteIcon = false,
+  containerStyle,
+}: renderType & PropsType) => {
   const {
     title,
     description,
@@ -27,7 +34,7 @@ const FullAdCard = ({item, onPress}: renderType & PropsType) => {
     properties,
   } = item;
   return (
-    <Card style={styles.card}>
+    <Card style={[styles.card, containerStyle]}>
       <AppButton style={styles.button} onPress={() => onPress(item)}>
         <View style={styles.ButtonCard}>
           <View style={styles.slideCol}>
@@ -40,13 +47,15 @@ const FullAdCard = ({item, onPress}: renderType & PropsType) => {
           <View style={styles.contentCol}>
             <View style={styles.dateAndFav}>
               <AppText style={styles.date}>{formatDate(date)}</AppText>
-              <AppButton>
-                {isFavorite ? (
-                  <AntDesign name="heart" color={colorThemes.red} size={25} />
-                ) : (
-                  <AntDesign name="hearto" size={25} />
-                )}
-              </AppButton>
+              {!shouldHideFavoriteIcon && (
+                <AppButton>
+                  {isFavorite ? (
+                    <AntDesign name="heart" color={colorThemes.red} size={25} />
+                  ) : (
+                    <AntDesign name="hearto" size={25} />
+                  )}
+                </AppButton>
+              )}
             </View>
             <AppText style={styles.title} numberOfLines={1}>
               {title}

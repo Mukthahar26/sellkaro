@@ -40,6 +40,10 @@ const Home = ({navigation}: Props) => {
     navigation.navigate(screenNames.FULLADSCREEN, {item});
   };
 
+  const navigateToFavorite = (item: any) => {
+    navigation.navigate(screenNames.FAVORITEADS);
+  };
+
   return (
     <ContainerView
       isIgnoreBottomBar
@@ -50,7 +54,7 @@ const Home = ({navigation}: Props) => {
         visible={openLocationModal}
         onClose={() => setOpenLocationModal(false)}
       />
-      <Card style={styles.card}>
+      <View style={styles.card}>
         <View style={styles.header}>
           <AppButton
             onPress={() => setOpenLocationModal(true)}
@@ -58,7 +62,7 @@ const Home = ({navigation}: Props) => {
             <Entypo
               name="location-pin"
               color={colorThemes.whiteIconColor}
-              size={18}
+              size={scale(25)}
             />
             <AppText style={styles.locationName}>Kadapa</AppText>
             <EvilIcons
@@ -68,11 +72,13 @@ const Home = ({navigation}: Props) => {
             />
           </AppButton>
           <View style={styles.locationView}>
-            <EvilIcons
-              name="heart"
-              size={scale(25)}
-              color={colorThemes.whiteIconColor}
-            />
+            <AppButton onPress={navigateToFavorite}>
+              <EvilIcons
+                name="heart"
+                size={scale(25)}
+                color={colorThemes.whiteIconColor}
+              />
+            </AppButton>
             <EvilIcons
               name="bell"
               size={scale(25)}
@@ -87,7 +93,7 @@ const Home = ({navigation}: Props) => {
           <AppInput style={styles.searchField} placeholder="Search" />
         </View>
         <SearchedTextList list={searchTags} />
-      </Card>
+      </View>
       <View style={styles.subContainer}>
         <AppText style={styles.categoryLabel}>Explore Categories</AppText>
         <Card style={styles.categoriesCard}>

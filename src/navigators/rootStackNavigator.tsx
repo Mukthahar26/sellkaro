@@ -11,6 +11,9 @@ import Support from '../screens/support';
 import AdPostMenu from '../screens/adPostScreens/adPostMenu';
 import Profile from '../screens/profile';
 import CreateAd from '../screens/adPostScreens/createAd';
+import ReportAd from '../screens/reportAd';
+import {AdItemProps} from '../global/globalProps';
+import FavoriteAds from '../screens/favoriteAds';
 
 export type RootStackParamList = {
   [screenNames.HOME]: undefined;
@@ -24,17 +27,21 @@ export type RootStackParamList = {
     id: string;
   };
   [screenNames.FULLADSCREEN]: {
-    item: any;
+    item: AdItemProps;
     path?: string;
     status?: string;
   };
-  [screenNames.CHATSCREEN]: {item: any};
+  [screenNames.CHATSCREEN]: {item: AdItemProps};
   [screenNames.SUPPORT]: undefined;
-  [screenNames.PROFILE]: {
+  [screenNames.ROOTPROFILESCREEN]: {
     backIsRequired?: boolean;
   };
   [screenNames.POSTAD]: undefined;
   [screenNames.CREATEAD]: undefined;
+  [screenNames.REPORTAD]: {
+    item: AdItemProps;
+  };
+  [screenNames.FAVORITEADS]: undefined;
 };
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
@@ -59,9 +66,14 @@ const RootStackNavigator = () => {
       <RootStack.Screen name={screenNames.POSTAD} component={AdPostMenu} />
       <RootStack.Screen name={screenNames.CREATEAD} component={CreateAd} />
       <RootStack.Screen
-        name={screenNames.PROFILE}
+        name={screenNames.ROOTPROFILESCREEN}
         component={Profile}
         initialParams={{backIsRequired: true}}
+      />
+      <RootStack.Screen name={screenNames.REPORTAD} component={ReportAd} />
+      <RootStack.Screen
+        name={screenNames.FAVORITEADS}
+        component={FavoriteAds}
       />
     </RootStack.Navigator>
   );

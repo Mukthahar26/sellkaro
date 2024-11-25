@@ -1,7 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Image} from 'react-native';
 import styles from './styles';
-import {formatDate, getBGColorOfStatus} from '../../../utilities/utils';
+import {
+  confirmPopup,
+  formatDate,
+  getBGColorOfStatus,
+} from '../../../utilities/utils';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {colorThemes} from '../../../themes/colors';
 import {postStatus} from '../../../constants/contants';
@@ -27,8 +31,15 @@ const MyAdsList = ({item, onPressItem}: Props) => {
     createdDate,
     expiryDate,
   } = item;
-
   const shouldSoldBtnVisible = status === postStatus.ACTIVE;
+
+  const onRemoveAd = () => {
+    confirmPopup({
+      description: 'Do you want to remove this Ad?',
+      onClickPositive: () => console.log('Removed'),
+    });
+  };
+
   return (
     <Card style={styles.card} onPress={() => onPressItem(item)}>
       <View style={styles.dateRow}>
@@ -82,7 +93,7 @@ const MyAdsList = ({item, onPressItem}: Props) => {
             <View style={styles.divider} />
           </>
         )}
-        <AppButton style={styles.button}>
+        <AppButton style={styles.button} onPress={onRemoveAd}>
           <AppText style={[styles.buttonLabel, {color: colorThemes.red}]}>
             REMOVE
           </AppText>

@@ -4,7 +4,6 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../navigators/rootStackNavigator';
 import {screenNames} from '../../constants/contants';
 import {colorThemes} from '../../themes/colors';
-import FastImage from 'react-native-fast-image';
 import styles from './styles';
 import AppText from '../../components/commonComponents/AppText';
 import ScreenHeader from '../../components/blockComponents/screenHeader';
@@ -16,7 +15,6 @@ import {scale} from 'react-native-size-matters';
 import AppButton from '../../components/commonComponents/AppButton';
 import Share from 'react-native-share';
 import {
-  convertWidthPercentageToValue,
   formatDate,
   getBGColorOfStatus,
   getBase64WithUri,
@@ -28,7 +26,6 @@ import Card from '../../components/commonComponents/card';
 import AdSenseAdBanner from '../../components/blockComponents/adSenseAdBanner';
 import globalStyles from '../../global/globalStyles';
 import {useNavigation} from '@react-navigation/native';
-import Loader from '../../components/commonComponents/loader';
 import CustomImageSlider from '../../components/commonComponents/imageSliider';
 
 type Props = NativeStackScreenProps<
@@ -52,7 +49,6 @@ const FullAdScreen = ({route}: Props) => {
   } = item ? item : ({} as any);
 
   const [shareImageBase64, setShareImageBase64] = useState('');
-  const [loading, setLoading] = useState(Array(imageUrl.length).fill(true));
 
   const isSelfViewing = path === 'myAdsList';
 
@@ -88,6 +84,9 @@ const FullAdScreen = ({route}: Props) => {
 
   const navigateToProfile = () =>
     navigation.navigate(screenNames.ROOTPROFILESCREEN);
+
+  const navigateToReportAd = () =>
+    navigation.navigate(screenNames.REPORTAD, {item});
 
   console.log('imageUrl', imageUrl);
   return (
@@ -166,7 +165,7 @@ const FullAdScreen = ({route}: Props) => {
             View Profile
           </AppText>
         </Card>
-        <AppButton style={styles.reportButton}>
+        <AppButton style={styles.reportButton} onPress={navigateToReportAd}>
           <AppText style={styles.reportLabel}>Report the Ad</AppText>
         </AppButton>
         <AdSenseAdBanner />
