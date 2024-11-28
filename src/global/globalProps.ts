@@ -16,3 +16,12 @@ export type propertiesType = {
   label: string;
   value: string;
 };
+
+export type InAppNotificationProps = {
+  imageUrl: string;
+  title: string;
+  date: string;
+  userName: string;
+  reportText?: string;
+  type: 'FAVORITES' | 'REPORT';
+};

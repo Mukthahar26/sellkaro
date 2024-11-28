@@ -14,6 +14,8 @@ import CreateAd from '../screens/adPostScreens/createAd';
 import ReportAd from '../screens/reportAd';
 import {AdItemProps} from '../global/globalProps';
 import FavoriteAds from '../screens/favoriteAds';
+import InAppNotifications from '../screens/in-appNotifications';
+import ShowReportText from '../screens/showReportText';
 
 export type RootStackParamList = {
   [screenNames.HOME]: undefined;
@@ -42,6 +44,10 @@ export type RootStackParamList = {
     item: AdItemProps;
   };
   [screenNames.FAVORITEADS]: undefined;
+  [screenNames.INAPPNOTIFICATIONS]: undefined;
+  [screenNames.SHOWREPORTTEXRT]: {
+    reportText: string;
+  };
 };
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
@@ -74,6 +80,14 @@ const RootStackNavigator = () => {
       <RootStack.Screen
         name={screenNames.FAVORITEADS}
         component={FavoriteAds}
+      />
+      <RootStack.Screen
+        name={screenNames.INAPPNOTIFICATIONS}
+        component={InAppNotifications}
+      />
+      <RootStack.Screen
+        name={screenNames.SHOWREPORTTEXRT}
+        component={ShowReportText}
       />
     </RootStack.Navigator>
   );

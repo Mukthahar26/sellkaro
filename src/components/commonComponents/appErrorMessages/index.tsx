@@ -20,12 +20,25 @@ const AppErrorMessages = ({
       return (
         <>
           <EvilIcons
-            name="bell"
+            name="heart"
             size={scale(150)}
             color={colorThemes.black40}
           />
           <AppText style={styles.messageLabel}>
             You dont have favorites right now.
+          </AppText>
+        </>
+      );
+    } else if (type === 'Notifocation') {
+      return (
+        <>
+          <EvilIcons
+            name="bell"
+            size={scale(150)}
+            color={colorThemes.black40}
+          />
+          <AppText style={styles.messageLabel}>
+            You dont have In-App Notifications right now.
           </AppText>
         </>
       );

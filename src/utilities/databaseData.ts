@@ -560,6 +560,98 @@ export const myAdsList = [
   },
 ];
 
+export const notiicationsList = [
+  {
+    imageUrl:
+      'https://bd.gaadicdn.com/processedimages/yamaha/mt-15-2-0/source/mt-15-2-062e4b1d700b63.jpg?tr=w-375',
+    title: 'Masthan Valli added your ad as a favorite.',
+    date: new Date(),
+    userName: 'Masthan Valli',
+    type: 'FAVORITES',
+  },
+  {
+    imageUrl: '',
+    title: 'Masthan Valli added your ad as a favorite.',
+    date: new Date(),
+    userName: 'Masthan Valli',
+    type: 'FAVORITES',
+  },
+  {
+    imageUrl:
+      'https://bd.gaadicdn.com/processedimages/yamaha/mt-15-2-0/source/mt-15-2-062e4b1d700b63.jpg?tr=w-375',
+    title:
+      'Mobile123 Reported on your ad. We are reviewing it. Tap to learn more.',
+    date: new Date(),
+    userName: 'Masthan Valli',
+    type: 'REPORT',
+    reportText:
+      'This ad was shown based on your activity or preferences. If you believe this ad is inappropriate, misleading, or violates our guidelines, you can report it. Your feedback helps us ensure a safe and relevant advertising experience.',
+  },
+  {
+    imageUrl:
+      'https://bd.gaadicdn.com/processedimages/yamaha/mt-15-2-0/source/mt-15-2-062e4b1d700b63.jpg?tr=w-375',
+    title: 'Masthan Valli added your ad as a favorite.',
+    date: new Date(),
+    userName: 'Masthan Valli',
+    type: 'FAVORITES',
+  },
+  {
+    imageUrl:
+      'https://bd.gaadicdn.com/processedimages/yamaha/mt-15-2-0/source/mt-15-2-062e4b1d700b63.jpg?tr=w-375',
+    title: 'Masthan Valli added your ad as a favorite.',
+    date: new Date(),
+    userName: 'Masthan Valli',
+    type: 'FAVORITES',
+  },
+  {
+    imageUrl:
+      'https://bd.gaadicdn.com/processedimages/yamaha/mt-15-2-0/source/mt-15-2-062e4b1d700b63.jpg?tr=w-375',
+    title: 'Masthan Valli added your ad as a favorite.',
+    date: new Date(),
+    userName: 'Masthan Valli',
+    type: 'FAVORITES',
+  },
+  {
+    imageUrl:
+      'https://bd.gaadicdn.com/processedimages/yamaha/mt-15-2-0/source/mt-15-2-062e4b1d700b63.jpg?tr=w-375',
+    title: 'Masthan Valli added your ad as a favorite.',
+    date: new Date(),
+    userName: 'Masthan Valli',
+    type: 'FAVORITES',
+  },
+  {
+    imageUrl:
+      'https://bd.gaadicdn.com/processedimages/yamaha/mt-15-2-0/source/mt-15-2-062e4b1d700b63.jpg?tr=w-375',
+    title: 'Masthan Valli added your ad as a favorite.',
+    date: new Date(),
+    userName: 'Masthan Valli',
+    type: 'FAVORITES',
+  },
+  {
+    imageUrl: '',
+    title: 'Masthan Valli added your ad as a favorite.',
+    date: new Date(),
+    userName: 'Masthan Valli',
+    type: 'FAVORITES',
+  },
+  {
+    imageUrl:
+      'https://bd.gaadicdn.com/processedimages/yamaha/mt-15-2-0/source/mt-15-2-062e4b1d700b63.jpg?tr=w-375',
+    title: 'Masthan Valli added your ad as a favorite.',
+    date: new Date(),
+    userName: 'Masthan Valli',
+    type: 'FAVORITES',
+  },
+  {
+    imageUrl:
+      'https://bd.gaadicdn.com/processedimages/yamaha/mt-15-2-0/source/mt-15-2-062e4b1d700b63.jpg?tr=w-375',
+    title: 'Masthan Valli added your ad as a favorite.',
+    date: new Date(),
+    userName: 'Masthan Valli',
+    type: 'FAVORITES',
+  },
+];
+
 export const recentlyAddedList = [
   ...entertainmentList,
   ...pgList,

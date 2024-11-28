@@ -40,8 +40,12 @@ const Home = ({navigation}: Props) => {
     navigation.navigate(screenNames.FULLADSCREEN, {item});
   };
 
-  const navigateToFavorite = (item: any) => {
+  const navigateToFavorite = () => {
     navigation.navigate(screenNames.FAVORITEADS);
+  };
+
+  const navigateToNotifications = () => {
+    navigation.navigate(screenNames.INAPPNOTIFICATIONS);
   };
 
   return (
@@ -79,11 +83,13 @@ const Home = ({navigation}: Props) => {
                 color={colorThemes.whiteIconColor}
               />
             </AppButton>
-            <EvilIcons
-              name="bell"
-              size={scale(25)}
-              color={colorThemes.whiteIconColor}
-            />
+            <AppButton onPress={navigateToNotifications}>
+              <EvilIcons
+                name="bell"
+                size={scale(25)}
+                color={colorThemes.whiteIconColor}
+              />
+            </AppButton>
           </View>
         </View>
         <View style={styles.subContainer}>
