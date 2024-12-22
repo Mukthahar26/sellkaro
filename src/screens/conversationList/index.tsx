@@ -8,7 +8,7 @@ import UnderLine from '../../components/commonComponents/underLine';
 import {screenNames} from '../../constants/contants';
 import {useNavigation} from '@react-navigation/native';
 
-const Conversations = () => {
+const ConversationsList = () => {
   const navigation = useNavigation<any>();
   const navigateTo = (item: any) => {
     navigation.navigate(screenNames.CHATSCREEN, {item});
@@ -33,4 +33,4 @@ const Conversations = () => {
   );
 };
 
-export default Conversations;
+export default ConversationsList;

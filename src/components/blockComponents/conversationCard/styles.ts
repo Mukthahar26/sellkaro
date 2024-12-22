@@ -32,6 +32,9 @@ export default StyleSheet.create({
     marginBottom: scale(5),
     alignSelf: 'flex-start',
   },
+  message: {
+    marginLeft: scale(5),
+  },
   initialContainer: {
     flex: 15,
     marginRight: scale(10),
@@ -43,5 +46,14 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+  },
+  readStatus: {
+    fontStyle: 'italic',
+    color: '#34B7F1',
+  },
+  messageContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
 });

@@ -5,6 +5,7 @@ import AppText from '../../commonComponents/AppText';
 import {conversationItem, conversationListProps} from './props';
 import {formatDate, isUndefineOrNull} from '../../../utilities/utils';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {colorThemes} from '../../../themes/colors';
 import AppButton from '../../commonComponents/AppButton';
 import InitialsOrImage from '../../commonComponents/initialsOrImage';
@@ -33,7 +34,24 @@ const ConversationList = ({item, onSelectedItem}: conversationListProps) => {
           {subject}
         </AppText>
         <View style={styles.deleteView}>
-          <AppText numberOfLines={1}>{message}</AppText>
+          <View style={styles.messageContainer}>
+            {isRead ? (
+              <MaterialIcons
+                name="done-all"
+                color={colorThemes.brandColor}
+                size={15}
+              />
+            ) : (
+              <MaterialIcons
+                name="done"
+                color={colorThemes.brandColor}
+                size={15}
+              />
+            )}
+            <AppText style={styles.message} numberOfLines={1}>
+              {message}
+            </AppText>
+          </View>
           <AppButton>
             <MaterialCommunityIcons
               name="delete"
@@ -42,7 +60,6 @@ const ConversationList = ({item, onSelectedItem}: conversationListProps) => {
             />
           </AppButton>
         </View>
-        <AppText>{isRead ? 'Seen' : ''}</AppText>
       </View>
     </AppButton>
   );

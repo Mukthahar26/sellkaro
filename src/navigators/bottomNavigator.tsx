@@ -12,13 +12,14 @@ import AppText from '../components/commonComponents/AppText';
 import MyAds from '../screens/myAds';
 import Chat from '../screens/chat';
 import Profile from '../screens/profile';
+import ConversationList from '../screens/conversationList';
 
 export type bottomNavigatorParams = {
   [screenNames.HOME]: undefined;
   [screenNames.MYADS]: undefined;
   [screenNames.DUMMY]: undefined;
   [screenNames.PROFILE]: undefined;
-  [screenNames.CHATSCREEN]: undefined;
+  [screenNames.CONVERSATIONLIST]: undefined;
 };
 
 const renderBottomTab = ({focused, labelName, color, iconName}: any) => {
@@ -110,8 +111,8 @@ const BottomNavigator = () => {
               iconName: 'message-outline',
             }),
         }}
-        name={screenNames.CHATSCREEN}
-        component={Chat}
+        name={screenNames.CONVERSATIONLIST}
+        component={ConversationList}
       />
       <Tab.Screen
         options={{

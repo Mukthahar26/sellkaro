@@ -21,7 +21,7 @@ type RenderInAppNotificationProps = {
 
 type Props = NativeStackScreenProps<
   RootStackParamList,
-  screenNames.SHOWREPORTTEXRT
+  screenNames.INAPPNOTIFICATIONS
 >;
 
 const InAppNotifications = ({navigation}: Props) => {
